@@ -1,8 +1,34 @@
 # label-operator
-// TODO(user): Add simple overview of use/purpose
+A simple tool to change the lables and names of pods
+
+How to run:
+
+1. Create a test pod:
+
+```sh
+kubectl run --image=nginx my-nginx
+```
+
+2. Inside the `label-operator` foder execute the command:
+
+```sh
+make run
+```
+
+3. Change the label of the pod:
+
+```sh
+kubectl annotate pod my-nginx andrei.c.com/new-pod-label=true
+```
+
+4. Check pod label:
+
+```sh
+kubectl get pod my-nginx --show-labels
+```
 
 ## Description
-// TODO(user): An in-depth paragraph about your project and overview of use
+Custom k8s controller to change pod labels
 
 ## Getting Started
 You’ll need a Kubernetes cluster to run against. You can use [KIND](https://sigs.k8s.io/kind) to get a local cluster for testing, or run against a remote cluster.
